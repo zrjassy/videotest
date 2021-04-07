@@ -105,7 +105,6 @@ def yuv2rgb(y, u, v):
     # return rgb
 
 
-
 def jpg2avi(fps, image_dir, video_dir):
     if not os.path.exists(video_dir):
         os.makedirs(video_dir)

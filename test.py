@@ -15,7 +15,7 @@ class Producer(threading.Thread):
         print(size)
         fourcc = cv2.VideoWriter_fourcc('M', 'P', '4', '2')
         # 定义视频文件输入对象
-        self.outVideo = cv2.VideoWriter('saveDir.avi', fourcc, self.fps, size)
+        # self.outVideo = cv2.VideoWriter('saveDir.avi', fourcc, self.fps, size)
         cv2.namedWindow("cap video", 0)
 
     def run(self):
@@ -24,9 +24,9 @@ class Producer(threading.Thread):
             ret, image = self.cap.read()
             if ret:
                 cv2.imshow('cap video', image)
-                self.outVideo.write(image)
+                # self.outVideo.write(image)
             if cv2.waitKey(1) & 0xFF == ord('q'):
-                self.outVideo.release()
+                # self.outVideo.release()
                 self.cap.release()
                 cv2.destroyAllWindows()
                 break
@@ -35,6 +35,6 @@ class Producer(threading.Thread):
 
 if __name__ == '__main__':
     print('run program')
-    rtsp_str = './video/videoTest.avi'
+    rtsp_str = './res/test.mp4'
     producer = Producer(rtsp_str)
     producer.run()
