@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 # Video_File = "BasketballDrill_832x480_50.yuv"
-Video_File = "/home/jassy/project/c/video/test_out.yuv"
+Video_File = "../video/BasketballDrill_832x480_50.yuv"
 height = 480
 width = 832
 fp = open(Video_File, 'rb')
@@ -48,9 +48,9 @@ for i in range(Number_Frame):
     time.sleep(1 / fps)
 
 
-class Producer:
-    def __init__(self, video_path, width, height):
-        self.video_path = video_path
-        self.width = width
-        self.height = height
-        self.fp = open(video_path, 'rb')
+# class Producer:
+#     def __init__(self, video_path, width, height):
+#         self.video_path = video_path
+#         self.width = width
+#         self.height = height
+#         self.fp = open(video_path, 'rb')
